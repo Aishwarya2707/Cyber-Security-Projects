@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Phishing Simulation Dashboard</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .number {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e9e9e9;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Phishing Simulation Dashboard</h1>
+
+    <div class="card">
+
+        <h2>Total Recorded Responses</h2>
+
+        <div class="number">
+            {{ total }}
+        </div>
+
+    </div>
+
+    <h2>Response Details</h2>
+
+    <table>
+
+        <tr>
+            <th>Action</th>
+            <th>Time</th>
+        </tr>
+
+        {% for response in responses %}
+
+        <tr>
+
+            <td>{{ response[0] }}</td>
+
+            <td>{{ response[1] }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+
+</html>
